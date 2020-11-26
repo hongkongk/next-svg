@@ -26,6 +26,7 @@ const getBuildConfig = (...args) => {
 
   const nextConfig = {
     ...cssOptions,
+    exclude: /src\/components\/icon\/icons/,
     webpack(config) {
       config.module.rules.push({
         test: /\.svg$/,
@@ -48,7 +49,7 @@ const getBuildConfig = (...args) => {
       return config
     },
   }
-  return nextConfig
+  return withPlugins([[withImages, {}]], nextConfig)(...args)
 }
 
 module.exports = (phase, ...rest) => {
