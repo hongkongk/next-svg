@@ -48,7 +48,7 @@ const getBuildConfig = (...args) => {
       return config
     },
   }
-  return withPlugins([[withImages, {}]], nextConfig)(...args)
+  return nextConfig
 }
 
 module.exports = (phase, ...rest) => {
