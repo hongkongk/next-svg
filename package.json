@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test jest",
     "test:dev": "NODE_ENV=test jest --watchAll",
-    "start": "NODE_ENV=production -p PORT=$PORT next start",
+    "start": "next start -p $PORT ",
     "build": "rm -rf .next && next build",
     "dev": "next dev",
     "export": "npm run build && next export",
